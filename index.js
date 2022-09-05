@@ -1,21 +1,27 @@
-function isPalindrome(word) {
-  for (let startIndex = 0; startIndex < word.length / 2; startIndex++) {
-    const endIndex = word.length - 1 - startIndex;
-    if (word[startIndex] !== word[endIndex]) {
-      return false;
-    }
-  }
+function reverseString(word) {
+  // create an array from the input string
+  const wordArray = word.split("");
+  // reverse the array
+  const reversedWordArray = wordArray.reverse();
+  // create a string from the reversed array
+  const reversedWord = reversedWordArray.join("");
+  // return the reversed string
+  return reversedWord;
+}
 
-  return true;
-  
+function isPalindrome(word) {
+  // reverse the input string
+  const reversedWord = reverseString(word);
+  // if the reversed string is the same as the input
+  if (word === reversedWord) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* 
-  Add your pseudocode here
-  iterate from the beginning of the string to the middle of the string
-compare the letter we're iterating over to the corresponding letter at the end of the string
-if the letters don't match, return false
-if we reach the middle, and all the letters match, return true
+  
 */
 
 /*
